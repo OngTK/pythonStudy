@@ -7,3 +7,4 @@
 
 [4️⃣ URL & View 기초 (Django의 핵심)](https://www.notion.so/4-URL-View-Django-2d617d76968b806fa7abf4908ded5603?pvs=21)
 
+[5️⃣ Template 기초 & Django Template Language (DTL)](https://www.notion.so/ongtktheory/5-Template-Django-Template-Language-DTL-2d617d76968b80b68634ce33097446be?source=copy_link)
