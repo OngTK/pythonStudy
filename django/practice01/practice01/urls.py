@@ -1,4 +1,10 @@
 """
+
+URL 라우팅의 시작점
+
+요청 URL → VIEW(mvc의 Controller)를 연결
+
+
 URL configuration for practice01 project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -15,12 +21,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from .views import hello # Import 중요!!!!
 from .views import user_list
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("hello/", hello),
-    path("user/",user_list)
+    # path("hello/", hello),
+    # path("user/",user_list)
+
+    path("", include("main.urls"))
 ]
+
+
+

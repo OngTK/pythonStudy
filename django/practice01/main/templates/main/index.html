@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<!-- 📌 4-5. HTML 응답을 위한 Template 사용
+
+🟢 4-5-1. Template 폴더 생성
+    main\templates\main\index.html
+    일반적으로 [temlplate\앱이름] 을 권장
+
+🟢 4-5-2. HTML 작성
+    샘플 index.html
+
+    -->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Django Test</title>
+</head>
+<body>
+    <h1>Hello Django Template</h1>
+    <p id="msg">버튼을 눌러보세요</p>
+
+    <button onclick="changeText()">Click</button>
+
+    <!-- 📌 4-6. Veiw > Template 데이터 전달 -->
+    <h1>{{ title }}</h1>
+    <p>Count: {{ count }}</p>
+
+    <script>
+        function changeText() {
+            document.getElementById("msg").innerText = "JavaScript 동작 확인!";
+        }
+    </script>
+</body>
+</html>
