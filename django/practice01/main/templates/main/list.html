@@ -1,0 +1,63 @@
+{% load static %}
+<!-- static 파일 사용 선언 -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>{{ title }}</title>
+    <link rel='stylesheet' href="{% static 'main/style.css' %}">
+
+</head>
+
+<body>
+    <!-- 5-3 -->
+    <h1>📌 5. DTL(Django Template Language)</h1>
+    <h3>1.변수 출력</h3>
+    <div>{{title}}</div>
+    <div>View에서 전달된 context 값을 사용</div>
+
+    <!-- <h3>2. if 조건문</h3>
+        {% if count > 0%}
+            <p> 데이터가 있습니다. </p>
+        {% else %}
+            <p> 데이터가 없습니다. </p>
+        {% endif %} -->
+
+    <h3>3. for 반복문</h3>
+    <ul>
+        {% for post in posts %}
+        <li>{{ post }}</li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+    <h1> 📌 5-5. 정적파일 연결</h1>
+    <button onclick="showAlert()">Click</button>
+
+    <hr>
+    <h1> 📌 5-7. DTL에서 자주 쓰는 기능</h1>
+
+    <h3> 5-7-1. forloop 변수 </h3>
+    {% for post in posts %}
+    <div>{{ forloop.counter }}. {{ post }}</div>
+    {% endfor %}
+    <br>
+    <div> forloop.counter : 1부터 숫자를 세어 표시</div>
+
+    <h3> 5-7-2. 빈 리스트 처리</h3>
+    {% if posts %}
+        ...
+    {% else %}
+        <p>게시글이 없습니다.</p>
+    {% endif %}
+    
+    if 리스트 - else - end if : 리스트가 있으면 표시, 없으면 else를 수행
+
+    <script src="{% static 'main/script.js' %}"></script>
+
+</body>
+
+</html>

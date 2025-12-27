@@ -16,14 +16,16 @@
     <meta charset="UTF-8">
     <title>Django Test</title>
 </head>
+
 <body>
-    <h1>Hello Django Template</h1>
+    <h1>📌 Hello Django Template</h1>
     <p id="msg">버튼을 눌러보세요</p>
 
     <button onclick="changeText()">Click</button>
+    <hr>
 
     <!-- 📌 4-6. Veiw > Template 데이터 전달 -->
-    <h1>{{ title }}</h1>
+    <h1>📌 {{ title }}</h1>
     <p>Count: {{ count }}</p>
 
     <script>
@@ -31,5 +33,22 @@
             document.getElementById("msg").innerText = "JavaScript 동작 확인!";
         }
     </script>
+
+    <hr>
+        <!-- 5-3 -->
+        <h1>📌 5. DTL(Django Template Language)</h1>
+        <h3>1.변수 출력</h3>
+        <div>{{title}}</div>
+        <div>View에서 전달된 context 값을 사용</div>
+    
+        <h3>2. if 조건문</h3>
+        {% if count > 0%}
+            <p> 데이터가 있습니다. </p>
+        {% else %}
+            <p> 데이터가 없습니다. </p>
+        {% endif %}
+
+
 </body>
+
 </html>

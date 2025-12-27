@@ -36,3 +36,16 @@ def index(request):
         "count": 3
     }
     return render(request, "main/index.html", context)
+
+# 📌 5-4. View → Template 데이터 전달 실습
+# 🟢 5-4-1. View 코드
+def list_view(request):
+    context = {
+        "title": "게시글 목록",
+        "posts" : [
+            "Django 기초",
+            "Template 사용법",
+            "Model과 ORM"
+        ]
+    }
+    return render(request, "main/list.html", context)
