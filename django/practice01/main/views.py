@@ -8,6 +8,7 @@ views.py
 from django.shortcuts import render     # default / 4-5-3
 from django.http import HttpResponse    # 4-2-1
 from django.http import JsonResponse    # 4-4-1  
+from .models import Post                # 6-8
 
 # Create your views here.
 
@@ -49,3 +50,18 @@ def list_view(request):
         ]
     }
     return render(request, "main/list.html", context)
+
+# 📌 6-8. View에서 ORM 사용
+def post_list(request):
+    posts = Post.objects.all() #ReadAll
+
+    return render(request, 
+                  "main/list.html", 
+                  {"post1s" : posts}
+                )
+
+# Post.objects.create(
+#     title = "첫 글",
+#     content="내용"
+# )
+# Post.objects.all()

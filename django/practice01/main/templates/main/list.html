@@ -49,12 +49,20 @@
 
     <h3> 5-7-2. 빈 리스트 처리</h3>
     {% if posts %}
-        ...
+    ...
     {% else %}
-        <p>게시글이 없습니다.</p>
+    <p>게시글이 없습니다.</p>
     {% endif %}
-    
+
     if 리스트 - else - end if : 리스트가 있으면 표시, 없으면 else를 수행
+
+    <h1> 📌 6-8. View에서 ORM 사용</h1>
+    <ul>
+        {% for post in post1s %}
+            <li>{{post.title}} : {post.created_at}</li>
+        {% endfor%}
+    </ul>
+
 
     <script src="{% static 'main/script.js' %}"></script>
 
