@@ -43,13 +43,28 @@ ALLOWED_HOSTS = []
 """
 INSTALLED_APPS = [
     'django.contrib.admin',
-    'django.contrib.auth',
+    'django.contrib.auth',          # 인증 시스템
     'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
+    'django.contrib.sessions',      # 세션
+    'django.contrib.messages',      # 메시지 프레임워크
     'django.contrib.staticfiles', # CSS/JS 등 정적파일 연결
     'main',  # 우리가 만든 앱
 ]
+"""
+📌 'django.contrib.auth'
+    - 회원, 로그인, 권한의 핵심
+    - User 모델
+    - 비밀번호 해시
+    - 로그인/로그아웃
+    - 권한/그룹
+    
+📌 'django.contrib.sessions'
+    - 브라우저에 session id 저장
+    - 서버 DB에 세션 정보 저장
+    
+📌'django.contrib.messages'
+    - 성공/에러 메시지 표시
+"""
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
