@@ -6,5 +6,5 @@ app_name = 'boards'
 
 # 📌 게시판(boards) 관련 URL 관리
 urlpatterns = [
-    path('', views.home, name='home'),  # 임시 홈
+    path('', views.home, name='home'),  # 홈
 ]

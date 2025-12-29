@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="p-4 bg-body-tertiary rounded">
+    <h1 class="h4">Board Practice</h1>
+    {% if user.is_authenticated %}
+      <p class="mb-0">로그인 상태: {{ user.username }}</p>
+    {% else %}
+      <p class="mb-0">현재 비로그인 상태입니다.</p>
+    {% endif %}
+  </div>
+{% endblock %}
