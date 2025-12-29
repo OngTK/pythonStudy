@@ -41,25 +41,27 @@
     <h1> 📌 5-7. DTL에서 자주 쓰는 기능</h1>
 
     <h3> 5-7-1. forloop 변수 </h3>
-    {% for post in posts %}
+    {% for post in testposts %}
     <div>{{ forloop.counter }}. {{ post }}</div>
     {% endfor %}
     <br>
     <div> forloop.counter : 1부터 숫자를 세어 표시</div>
 
     <h3> 5-7-2. 빈 리스트 처리</h3>
-    {% if posts %}
+    {% if testposts %}
     ...
     {% else %}
     <p>게시글이 없습니다.</p>
     {% endif %}
 
-    if 리스트 - else - end if : 리스트가 있으면 표시, 없으면 else를 수행
+    <div>
+        if 리스트 - else - end if : 리스트가 있으면 표시, 없으면 else를 수행
+    </div>
 
     <h1> 📌 6-8. View에서 ORM 사용</h1>
     <ul>
-        {% for post in post1s %}
-            <li>{{post.title}} : {post.created_at}</li>
+        {% for post in posts %}
+        <li>{{post.title}} : {{post.created_at}}</li>
         {% endfor%}
     </ul>
 

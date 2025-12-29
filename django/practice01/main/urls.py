@@ -2,7 +2,7 @@
 main app 전용 url 파일
 """
 from django.urls import path
-from .views import hello, json_test, index, list_view
+from .views import hello, json_test, index, list_view, post_list, post_create
 
 urlpatterns = [
     # 📌 4-2-1. 첫번째 View 만들기
@@ -18,5 +18,10 @@ urlpatterns = [
 
     # 📌 5-4. View → Template 데이터 전달 실습
     # 🟢 5-4-1. View 코드
-    path("list/", list_view),
+    # path("list/", list_view),
+    
+    path("list/", post_list),
+    # 📌 8-5. Form 연결
+    path("create/",post_create,name="post_create")
+
 ]

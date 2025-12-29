@@ -6,9 +6,11 @@ views.py
   
 """
 from django.shortcuts import render     # default / 4-5-3
+from django.shortcuts import redirect
 from django.http import HttpResponse    # 4-2-1
 from django.http import JsonResponse    # 4-4-1  
 from .models import Post                # 6-8
+from .forms import PostForm             # 8-4
 
 # Create your views here.
 
@@ -43,7 +45,7 @@ def index(request):
 def list_view(request):
     context = {
         "title": "게시글 목록",
-        "posts" : [
+        "testposts" : [
             "Django 기초",
             "Template 사용법",
             "Model과 ORM"
@@ -57,7 +59,7 @@ def post_list(request):
 
     return render(request, 
                   "main/list.html", 
-                  {"post1s" : posts}
+                  {"posts" : posts}
                 )
 
 # Post.objects.create(
@@ -65,3 +67,14 @@ def post_list(request):
 #     content="내용"
 # )
 # Post.objects.all()
+
+# 📌 8-4. Form을 사용하는 View 작성
+def post_create(request):
+    if request.method == "POST":
+        form = PostForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("list")
+    else:
+        form = PostForm()
+    return render(request, "main/post_form.html", {"form":form})
