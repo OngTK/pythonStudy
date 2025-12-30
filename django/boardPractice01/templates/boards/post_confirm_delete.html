@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card">
+  <div class="card-body">
+    <h2 class="h5">게시글 삭제</h2>
+    <p class="mb-3">정말 삭제하시겠습니까?</p>
+    <div class="mb-3"><strong>{{ post.title }}</strong></div>
+
+    <form method="post" class="d-flex gap-2">
+      {% csrf_token %}
+      <button class="btn btn-danger" type="submit">삭제</button>
+      <a class="btn btn-outline-secondary" href="{% url 'boards:post_detail' post.id %}">취소</a>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
